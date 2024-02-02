@@ -46,7 +46,7 @@ const server = http.createServer((req, res) => {
 
     // GET /image
     // Return the image used in the image tag
-  } else if (req.url === "/frame-fc.png") {
+  } else if (req.url === "/image") {
     const imagePath = path.join(__dirname, "frame-fc.png");
     const imageStream = fs.createReadStream(imagePath);
     res.writeHead(200, { "Content-Type": "image/png" });
@@ -55,7 +55,7 @@ const server = http.createServer((req, res) => {
     // POST /click
     // Handle the Frame Signature Packet response when a button is clicked
     // in the frame
-  } else if (req.method === "POST" && req.url === "/https://farcaster-dev-call-frame.vercel.app") {
+  } else if (req.method === "POST" && req.url === "/click") {
     let body = "";
 
     req.on("data", (chunk) => {
