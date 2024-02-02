@@ -13,6 +13,9 @@ const SUPERRARE_LINK =
 const TWITTER_LINK =
   "https://twitter.com/ferdoropeza";
 
+const OGTITLE = "Ferdoropeza X Frame";
+
+
 const server = http.createServer((req, res) => {
   // GET / (Index Route)
   // Return a frame which renders an image with four redirect buttons
@@ -23,10 +26,10 @@ const server = http.createServer((req, res) => {
          <head>   
             <meta charSet="utf-8"/>
             <meta name="viewport" content="width=device-width"/>
-            <meta property="og:title" content="FC Dev Call" />
-            <meta property='og:image' content="https://farcaster-dev-call-frame.vercel.app/image" />
+            <meta property="og:title" content="${OGTITLE}" />
+            <meta property='og:image' content="https://farcaster-dev-call-frame.vercel.app/frame-fc.png" />
             <meta property="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="https://farcaster-dev-call-frame.vercel.app/image" />
+            <meta property="fc:frame:image" content="https://farcaster-dev-call-frame.vercel.app/frame-fc.png" />
             <meta property="fc:frame:button:1" content="SuperRare" />
             <meta property="fc:frame:button:1:action" content="post_redirect" />
             <meta property="fc:frame:button:2" content="Objkt" />
@@ -35,7 +38,7 @@ const server = http.createServer((req, res) => {
             <meta property="fc:frame:button:3:action" content="post_redirect" />
             <meta property="fc:frame:button:4" content="Fxhash" />
             <meta property="fc:frame:button:4:action" content="post_redirect" />
-            <meta property="fc:frame:post_url" content="https://farcaster-dev-call-frame.vercel.app/click" />
+            <meta property="fc:frame:post_url" content="https://farcaster-dev-call-frame.vercel.app" />
           </head>
           <body><marquee> wowow </marquee></body>
       </html>`);
@@ -43,7 +46,7 @@ const server = http.createServer((req, res) => {
 
     // GET /image
     // Return the image used in the image tag
-  } else if (req.url === "/image") {
+  } else if (req.url === "/frame-fc.png") {
     const imagePath = path.join(__dirname, "frame-fc.png");
     const imageStream = fs.createReadStream(imagePath);
     res.writeHead(200, { "Content-Type": "image/png" });
@@ -52,7 +55,7 @@ const server = http.createServer((req, res) => {
     // POST /click
     // Handle the Frame Signature Packet response when a button is clicked
     // in the frame
-  } else if (req.method === "POST" && req.url === "/click") {
+  } else if (req.method === "POST" && req.url === "/https://farcaster-dev-call-frame.vercel.app") {
     let body = "";
 
     req.on("data", (chunk) => {
@@ -65,10 +68,10 @@ const server = http.createServer((req, res) => {
       const buttonIndex = JSON.parse(body).untrustedData.buttonIndex;
 
       // Route to another internal endpoint which does the redirect.
-      res.writeHead(302, {
-        Location:
-          "https://farcaster-dev-call-frame.vercel.app/redirect?buttonIndex=" + buttonIndex,
-      });
+      //res.writeHead(302, {
+     //   Location:
+       //   "https://farcaster-dev-call-frame.vercel.app/redirect?buttonIndex=" + buttonIndex,
+      //});
 
       res.end();
     });
