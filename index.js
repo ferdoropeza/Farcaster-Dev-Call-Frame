@@ -4,13 +4,13 @@ const app = express();
 const port = 3000;
 
 // Links used for the redirect
-const CALENDAR_LINK =
+const OBJKT_LINK =
   "https://objkt.com/users/tz2JyW132finpXHFNCSrHtcBEHRmwp5ffYks";
-const PLAYLIST_LINK =
+const FXHASH_LINK =
   "https://www.fxhash.xyz/u/Daniel%20Oropeza";
-const NOTION_LINK =
+const SUPERRARE_LINK =
   "https://superrare.com/ferdoropeza";
-const ZOOM_LINK =
+const TWITTER_LINK =
   "https://twitter.com/ferdoropeza";
 
 // Middleware to parse JSON body
@@ -24,9 +24,9 @@ app.get("/", (req, res) => {
           <meta charSet="utf-8"/>
           <meta name="viewport" content="width=device-width"/>
           <meta property="og:title" content="FC Dev Call" />
-          <meta property='og:image' content="https://fc-dev-call.replit.app/image" />
+          <meta property='og:image' content="https://farcaster-dev-call-frame.vercel.app//image" />
           <meta property="fc:frame" content="vNext" />
-          <meta property="fc:frame:image" content="https://fc-dev-call.replit.app/image" />
+          <meta property="fc:frame:image" content="https://farcaster-dev-call-frame.vercel.app/image" />
           <meta property="fc:frame:button:1" content="Notes" />
           <meta property="fc:frame:button:1:action" content="post_redirect" />
           <meta property="fc:frame:button:2" content="Calendar" />
@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
           <meta property="fc:frame:button:3:action" content="post_redirect" />
           <meta property="fc:frame:button:4" content="Recordings" />
           <meta property="fc:frame:button:4:action" content="post_redirect" />
-          <meta property="fc:frame:post_url" content="https://fc-dev-call.replit.app/click" />
+          <meta property="fc:frame:post_url" content="https://farcaster-dev-call-frame.vercel.app//click" />
         </head>
         <body><marquee behavior="scroll" direction="left">wowow!</marquee></body>
     </html>
@@ -71,16 +71,16 @@ app.get("/redirect", (req, res) => {
   switch (buttonIndex) {
     case "1":
       console.log("2b");
-      redirectUrl = NOTION_LINK;
+      redirectUrl = SUPERRARE_LINK;
       break;
     case "2":
-      redirectUrl = CALENDAR_LINK;
+      redirectUrl = OBJKT_LINK;
       break;
     case "3":
-      redirectUrl = ZOOM_LINK;
+      redirectUrl = TWITTER_LINK;
       break;
     case "4":
-      redirectUrl = PLAYLIST_LINK;
+      redirectUrl = FXHASH_LINK;
       break;
     default:
       console.log("2a");
