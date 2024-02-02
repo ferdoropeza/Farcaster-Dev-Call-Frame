@@ -24,18 +24,18 @@ app.get("/", (req, res) => {
           <meta charSet="utf-8"/>
           <meta name="viewport" content="width=device-width"/>
           <meta property="og:title" content="FC Dev Call" />
-          <meta property='og:image' content="https://farcaster-dev-call-frame.vercel.app//image" />
+          <meta property='og:image' content="https://farcaster-dev-call-frame.vercel.app/image" />
           <meta property="fc:frame" content="vNext" />
           <meta property="fc:frame:image" content="https://farcaster-dev-call-frame.vercel.app/image" />
-          <meta property="fc:frame:button:1" content="Notes" />
+          <meta property="fc:frame:button:1" content="SuperRare" />
           <meta property="fc:frame:button:1:action" content="post_redirect" />
-          <meta property="fc:frame:button:2" content="Calendar" />
+          <meta property="fc:frame:button:2" content="Objkt" />
           <meta property="fc:frame:button:2:action" content="post_redirect" />
-          <meta property="fc:frame:button:3" content="Zoom" />
+          <meta property="fc:frame:button:3" content="Twitter" />
           <meta property="fc:frame:button:3:action" content="post_redirect" />
-          <meta property="fc:frame:button:4" content="Recordings" />
+          <meta property="fc:frame:button:4" content="FxHash" />
           <meta property="fc:frame:button:4:action" content="post_redirect" />
-          <meta property="fc:frame:post_url" content="https://farcaster-dev-call-frame.vercel.app//click" />
+          <meta property="fc:frame:post_url" content="https://farcaster-dev-call-frame.vercel.app/click" />
         </head>
         <body><marquee behavior="scroll" direction="left">wowow!</marquee></body>
     </html>
