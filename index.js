@@ -24,9 +24,9 @@ const server = http.createServer((req, res) => {
             <meta charSet="utf-8"/>
             <meta name="viewport" content="width=device-width"/>
             <meta property="og:title" content="FC Dev Call" />
-            <meta property='og:image' content="https://farcaster-dev-call-frame.vercel.app/frame-fc.png" />
+            <meta property='og:image' content="https://farcaster-dev-call-frame.vercel.app/image" />
             <meta property="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="https://farcaster-dev-call-frame.vercel.app/frame-fc.png" />
+            <meta property="fc:frame:image" content="https://farcaster-dev-call-frame.vercel.app/image" />
             <meta property="fc:frame:button:1" content="SuperRare" />
             <meta property="fc:frame:button:1:action" content="post_redirect" />
             <meta property="fc:frame:button:2" content="Objkt" />
